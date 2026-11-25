@@ -1,0 +1,37 @@
+
+# Dependencias
+node_modules/
+
+# Compilación
+dist/
+build/
+
+# Variables de entorno
+.env
+.env.*
+
+# Excepciones de variables de entorno
+!.env.example
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Cobertura de tests
+coverage/
+
+# Archivos temporales
+.tmp/
+.temp/
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+
+# NestJS
+*.tsbuildinfo
