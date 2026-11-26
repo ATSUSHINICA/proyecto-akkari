@@ -1,6 +1,6 @@
 import {Entity, PrimaryColumn, ManyToOne, JoinColumn } from 'typeorm';
 import {Usuario} from '../usuario/usuario.entity'
-
+import {Pelicula} from '../peliculas/pelicula.entity'
 
 @Entity({name: "USUARIO_PELICULA"})
 export class UsuarioPelicula{
@@ -11,14 +11,17 @@ export class UsuarioPelicula{
     @PrimaryColumn({name: "id_usuario"})
     idUsuario:number;
 
-    @PrimaryColumn({name: "id_usuario"})
+    @PrimaryColumn({name: "id_pelicula"})
     idPelicula:number;
 
+    // Relacion con Usuario
     @ManyToOne(() => Usuario, (usuario) => usuario.peliculas)
     @JoinColumn({name: 'id_usuario'})
     usuario!: Usuario;
 
-    // Ahora hay que hacer las relaciones con las entidades usuario y peliculas 
-    // Usuario
+    // Relacion con Pelicula
+    @ManyToOne(() => Pelicula, (pelicula) => pelicula.usuario)
+    @JoinColumn({name: 'id_pelicula'})
+    pelicula !: Pelicula;
 
 }

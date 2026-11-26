@@ -1,5 +1,4 @@
-import {ServiceUsuario} from './usuario.service';
+import { Controller } from '@nestjs/common';
 
-export class ControllerUsuario{
-
-}
+@Controller('usuario')
+export class UsuarioController {}

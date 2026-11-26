@@ -1,4 +1,4 @@
+import { Injectable } from '@nestjs/common';
 
-export class ServiceUsuario{
-
-}
+@Injectable()
+export class UsuarioService {}
