@@ -20,7 +20,7 @@ export class Pelicula{
     //Relación con la tabla compuesta usuario-pelicula
 
     @OneToMany(() => UsuarioPelicula, (usuarioPelicula) => usuarioPelicula.pelicula)
-    usuario !: UsuarioPelicula[];
+    usuarios !: UsuarioPelicula[];
 
     //Relación con la tabla compuesta pelicula-genero
 

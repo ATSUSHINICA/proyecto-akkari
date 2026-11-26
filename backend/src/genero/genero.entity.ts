@@ -12,5 +12,5 @@ export class Genero{
 
     // Relación con la tabla compuesta 
     @OneToMany(() => PeliculaGenero, (peliculaGenero) => peliculaGenero.genero )
-    pelicula !: PeliculaGenero;
+    pelicula !: PeliculaGenero[];
 }

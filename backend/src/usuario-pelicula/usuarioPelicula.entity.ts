@@ -1,4 +1,4 @@
-import {Entity, PrimaryColumn, ManyToOne, JoinColumn } from 'typeorm';
+import {Entity, Column, PrimaryColumn, ManyToOne, JoinColumn } from 'typeorm';
 import {Usuario} from '../usuario/usuario.entity'
 import {Pelicula} from '../peliculas/pelicula.entity'
 
@@ -20,10 +20,12 @@ export class UsuarioPelicula{
     usuario!: Usuario;
 
     // Relacion con Pelicula
-    @ManyToOne(() => Pelicula, (pelicula) => pelicula.usuario)
+    @ManyToOne(() => Pelicula, (pelicula) => pelicula.usuarios)
     @JoinColumn({name: 'id_pelicula'})
     pelicula !: Pelicula;
 
+    //tabla agregada desde el entity 
 
-    
+    @Column({name: 'veces_vista', type: 'integer', default: 0})
+    vecesVista: number;
 }

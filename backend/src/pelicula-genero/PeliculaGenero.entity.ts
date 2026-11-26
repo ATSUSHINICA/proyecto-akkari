@@ -19,4 +19,5 @@ export class PeliculaGenero{
     @ManyToOne(() => Genero, (genero) => genero.pelicula)
     @JoinColumn({name : 'id_genero'})
     genero !: Genero;
+
 }
