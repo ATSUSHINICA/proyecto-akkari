@@ -24,4 +24,6 @@ export class UsuarioPelicula{
     @JoinColumn({name: 'id_pelicula'})
     pelicula !: Pelicula;
 
+
+    
 }
