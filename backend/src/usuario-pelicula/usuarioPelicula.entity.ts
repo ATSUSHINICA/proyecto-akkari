@@ -9,10 +9,10 @@ export class UsuarioPelicula{
     que se crearon, no generará un usuario con un id random, de eso se encarga usuario*/ 
 
     @PrimaryColumn({name: "id_usuario"})
-    idUsuario:number;
+    idUsuario!: number;
 
     @PrimaryColumn({name: "id_pelicula"})
-    idPelicula:number;
+    idPelicula!: number;
 
     // Relacion con Usuario
     @ManyToOne(() => Usuario, (usuario) => usuario.peliculas)

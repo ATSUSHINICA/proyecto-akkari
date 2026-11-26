@@ -1,6 +1,6 @@
 import {Entity, PrimaryGeneratedColumn, Column, OneToMany} from 'typeorm'
 import {UsuarioPelicula} from '../usuario-pelicula/usuarioPelicula.entity'
-
+import {PeliculaGenero} from '../pelicula-genero/PeliculaGenero.entity'
 Entity({name: 'PELICULA'})
 
 export class Pelicula{
@@ -17,6 +17,13 @@ export class Pelicula{
     @Column({name: 'duracion'})
     duracion!: number;
 
+    //Relación con la tabla compuesta usuario-pelicula
+
     @OneToMany(() => UsuarioPelicula, (usuarioPelicula) => usuarioPelicula.pelicula)
     usuario !: UsuarioPelicula[];
+
+    //Relación con la tabla compuesta pelicula-genero
+
+    @OneToMany(()=> PeliculaGenero, (peliculaGenero) => peliculaGenero.pelicula)
+    genero !: PeliculaGenero[];
 }
